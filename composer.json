@@ -1,11 +1,13 @@
 {
   "name": "RatePAY/ratepay-api-php-sdk",
   "description": "RatePAY API PHP SDK",
+  "version": "0.9.0-beta",
   "license": "MIT",
   "type": "library",
   "homepage": "https://dev.ratepay.com",
   "support": {
-    "email": "integration@ratepay.com"
+    "email": "integration@ratepay.com",
+    "source": "https://github.com/ratepay/api-php-sdk-beta"
   },
   "authors": [
     {
@@ -14,7 +16,7 @@
     }
   ],
   "require": {
-    "php": ">=5.6.*"
+    "php": ">=5.6"
   },
   "require-dev": {
     "phpunit/phpunit": "5.7.*"
