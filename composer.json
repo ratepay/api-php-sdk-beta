@@ -1,0 +1,28 @@
+{
+  "name": "RatePAY/ratepay-api-php-sdk",
+  "description": "RatePAY API PHP SDK",
+  "license": "MIT",
+  "type": "library",
+  "homepage": "https://dev.ratepay.com",
+  "support": {
+    "email": "integration@ratepay.com"
+  },
+  "authors": [
+    {
+      "name": "Aarne Welschlau",
+      "email": "aarne.welschlau@ratepay.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.6.*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "5.7.*"
+  },
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "RatePAY\\" : "src/"
+    }
+  }
+}
