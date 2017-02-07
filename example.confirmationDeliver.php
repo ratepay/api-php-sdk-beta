@@ -87,7 +87,7 @@ $mbContent->setArray($invoicing);
 
 $confirmationDeliver = $rb->callConfirmationDeliver($mbHead, $mbContent);
 
-if (!$paymentInit->isSuccessful()) die("ConfirmationDeliver not successful");
+if (!$confirmationDeliver->isSuccessful()) die("ConfirmationDeliver not successful");
 
 var_dump("ConfirmationDeliver successful");
 

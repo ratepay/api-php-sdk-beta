@@ -25,9 +25,9 @@ $rb = new RatePAY\RequestBuilder(true); // Sandbox mode = true
 
 $paymentConfirm = $rb->callPaymentConfirm($mbHead);
 
-if (!$paymentInit->isSuccessful()) die("PaymentInit not successful");
+if (!$paymentConfirm->isSuccessful()) die("PaymentConfirm not successful");
 
-var_dump("PaymentInit successful");
+var_dump("PaymentConfirm successful");
 
 // PaymentConfirm response object provides no specific methods
 
