@@ -54,7 +54,7 @@ abstract class AbstractModel
      * @return $this
      */
     public function commonSetter($field, $arguments) {
-        if (is_array($arguments) && !empty($arguments[0])) {
+        if (is_array($arguments) && $arguments[0] !== "") {
             if (!key_exists($field, $this->admittedFields)) {
                 throw new ModelException("Invalid field '" . $field . "'");
             }
