@@ -55,6 +55,8 @@
             }
         }
 
+        ### Following methods are used for Payment Request -> Payment section
+
         /**
          * Returns all success codes
          *
@@ -123,6 +125,109 @@
         public function getPaymentFirstday()
         {
             return $this->result['paymentFirstday'];
+        }
+        
+        ### Following methods are used for installment calculation
+
+        /**
+         * Returns service charge
+         *
+         * @return float
+         */
+        public function getServiceCharge()
+        {
+            return number_format($this->result['serviceCharge'], 2, ",", ".");
+        }
+
+        /**
+         * Returns annual percentage rate
+         *
+         * @return float
+         */
+        public function getAnnualPercentageRate()
+        {
+            return number_format($this->result['annualPercentageRate'], 2, ",", ".");
+        }
+
+        /**
+         * Returns monthly debit interest
+         *
+         * @return float
+         */
+        public function getMonthlyDebitInterest()
+        {
+            return number_format($this->result['monthlyDebitInterest'], 2, ",", ".");
+        }
+
+        /**
+         * Returns interest amount
+         *
+         * @return float
+         */
+        public function getInterestAmount()
+        {
+            return number_format($this->result['interestAmount'], 2, ",", ".");
+        }
+
+        /**
+         * Returns total amount
+         *
+         * @return float
+         */
+        public function getTotalAmount()
+        {
+            return number_format($this->result['totalAmount'], 2, ",", ".");
+        }
+
+        /**
+         * Returns number of full rates
+         *
+         * @return int
+         */
+        public function getNumberOfRatesFull()
+        {
+            return $this->result['numberOfRatesFull'];
+        }
+
+        /**
+         * Returns total number of rates
+         *
+         * @return int
+         */
+        public function getNumberOfRates()
+        {
+            return $this->result['numberOfRates'];
+        }
+
+        /**
+         * Returns rate
+         *
+         * @return float
+         */
+        public function getRate()
+        {
+            return number_format($this->result['rate'], 2, ",", ".");
+        }
+
+        /**
+         * Returns last rate
+         *
+         * @return float
+         */
+        public function getLastRate()
+        {
+            return number_format($this->result['lastRate'], 2, ",", ".");
+        }
+
+        /**
+         * Returns
+         *
+         * @param string $country
+         * @return string
+         */
+        public function getResponseText($country = "DE")
+        {
+            return $this->result['displayedResponse'][$country];
         }
 
     }

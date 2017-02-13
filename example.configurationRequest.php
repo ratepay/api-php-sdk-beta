@@ -25,11 +25,12 @@ $configurationRequest = $rb->callConfigurationRequest($mbHead);
 if (!$configurationRequest->isSuccessful()) die("ConfigurationRequest not successful");
 
 // The ConfigurationRequest response object provides following methods:
-// getAllowedMonths(); // Returns list of allowed months {array}
-// getMinimumRate(); // Returns minimum rate {float}
+// getAllowedMonths(); // Returns list of allowed months {array} @param: order amount {numeric} is optional but recommended
+// getMinRate(); // Returns minimum rate {float}
+// getMaxRate(order amount); // Returns maximum rate {float} @param: order amount {numeric} is mandatory
 
 var_dump($configurationRequest->getAllowedMonths());
-var_dump($configurationRequest->getMinimumRate());
+var_dump($configurationRequest->getMinRate());
 
 
 /*********************************************************************************************************************************
