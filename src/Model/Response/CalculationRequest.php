@@ -14,24 +14,6 @@
          */
         private $successCodes = [603, 671, 688, 689, 695, 696, 697, 698, 699];
 
-        private $responseTexts = [
-            'DE' => [
-                603 => "Die Wunschrate entspricht den vorgegebenen Bedingungen.",
-                671 => "Die letzte Rate war niedriger als erlaubt. Laufzeit und/oder Rate wurden angepasst.",
-                688 => "Die Rate war niedriger als f&uuml;r Ratenpl&auml;ne mit langer Laufzeit erlaubt. Die Laufzeit wurde angepasst.",
-                689 => "Die Rate war niedriger als f&uuml;r Ratenpl&auml;ne mit kurzer Laufzeit erlaubt. Die Laufzeit wurde angepasst.",
-                695 => "Die Rate ist zu hoch f&uuml;r die minimal verf&uuml;gbare Laufzeit. Die Rate wurde verringert.",
-                696 => "Die Wunschrate ist zu niedrig. Die Rate wurde erh&ouml;ht.",
-                697 => "F&uuml;r die gew&auml;hlte Ratenh&ouml;he ist keine entsprechende Laufzeit verf&uuml;gbar. Die Ratenh&ouml;he wurde angepasst.",
-                698 => "Die Rate war zu niedrig f&uuml;r die maximal verf&uuml;gbare Laufzeit. Die Rate wurde erh&ouml;ht.",
-                699 => "Die Rate ist zu hoch f&uuml;r die minimal verf&uuml;gbare Laufzeit. Die Rate wurde verringert.",
-                ],
-            /*'EN' => [
-
-            ]*/
-        ];
-        
-
         /**
          * Validates response
          */
@@ -50,7 +32,6 @@
                 $this->setResult(['rate' => (float) $this->getResponse()->content->{'installment-calculation-result'}->{'rate'}]);
                 $this->setResult(['lastRate' => (float) $this->getResponse()->content->{'installment-calculation-result'}->{'last-rate'}]);
                 $this->setResult(['paymentFirstday' => (int) $this->getResponse()->content->{'installment-calculation-result'}->{'payment-firstday'}]);
-                $this->setResult(['displayedResponse' => ['DE' => $this->responseTexts['DE'][$this->getReasonCode()]]]);
                 $this->setSuccessful();
             }
         }
@@ -217,17 +198,6 @@
         public function getLastRate()
         {
             return number_format($this->result['lastRate'], 2, ",", ".");
-        }
-
-        /**
-         * Returns
-         *
-         * @param string $country
-         * @return string
-         */
-        public function getResponseText($country = "DE")
-        {
-            return $this->result['displayedResponse'][$country];
         }
 
     }
