@@ -31,7 +31,6 @@ class CommunicationService
     public function __construct($sandbox = false)
     {
         if (!$this->isCurl()) {
-            return;
             throw new CurlException("Curl function not available");
         }
 
