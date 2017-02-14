@@ -1,7 +1,7 @@
 {
   "name": "RatePAY/ratepay-api-php-sdk",
   "description": "RatePAY API PHP SDK",
-  "version": "0.9.0-beta",
+  "version": "0.9.1-beta",
   "license": "MIT",
   "type": "library",
   "homepage": "https://dev.ratepay.com",
