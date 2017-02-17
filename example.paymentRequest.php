@@ -57,10 +57,6 @@ $contentArr = [
             [
                 'Address' => [
                     'Type' => "billing",
-                    //'Salutation' => "Mrs.",
-                    //'FirstName' => "Alice",
-                    //'LastName' => "Nobodyknows",
-                    //'Company' => "Umbrella Corp.",
                     'Street' => "Hive Street 12",
                     //'StreetAdditional' => "SubLevel 27",
                     //'StreetNumber' => "12",
