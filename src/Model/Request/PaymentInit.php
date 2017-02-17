@@ -13,7 +13,7 @@ class PaymentInit extends AbstractRequest
     public function rule()
     {
         if (key_exists('value', $this->getHead()->admittedFields['TransactionId'])) {
-            $this->setErrorMsg("Payment Init admits no transaction id");
+            $this->setErrorMsg("Payment Init does not allow transaction id");
             return false;
         }
 

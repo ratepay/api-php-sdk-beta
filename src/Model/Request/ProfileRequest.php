@@ -13,7 +13,7 @@ class ProfileRequest extends AbstractRequest
     public function rule()
     {
         if (key_exists('value', $this->getHead()->admittedFields['TransactionId'])) {
-            $this->setErrorMsg("Profile Request admits no transaction id");
+            $this->setErrorMsg("Profile Request does not allow transaction id");
             return false;
         }
 
