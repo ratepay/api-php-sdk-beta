@@ -242,7 +242,7 @@ class InstallmentBuilder
     {
         $configuration = $this->getInstallmentCalculation($type, $value, $amount);
 
-        return json_encode($configuration);
+        return json_encode($configuration->getResult());
     }
 
     /**
